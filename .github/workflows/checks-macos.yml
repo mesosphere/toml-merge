@@ -1,0 +1,45 @@
+# Copyright 2022 D2iQ, Inc. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+name: build-on-macos
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-run:
+    runs-on: macos-latest
+    steps:
+      - uses: ConorMacBride/install-package@v1
+        with:
+          brew: bash coreutils findutils
+
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install tools via asdf
+        uses: asdf-vm/actions/install@v1
+
+      - name: Build
+        run: make release
+        env:
+          GORELEASER_FLAGS: --skip-publish --skip-validate --skip-docker
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run binary
+        run: |
+          ./dist/toml-merge_darwin_amd64_v1/toml-merge

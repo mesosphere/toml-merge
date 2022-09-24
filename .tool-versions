@@ -1,0 +1,4 @@
+golangci-lint 1.49.0
+goreleaser 1.11.3
+golang 1.19.1
+pre-commit 2.20.0
