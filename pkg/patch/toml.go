@@ -8,6 +8,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"path/filepath"
 
 	burntoml "github.com/BurntSushi/toml"
 	jsonpatch "github.com/evanphx/json-patch/v5"
@@ -41,6 +42,25 @@ func FilePatches(patchFiles ...string) PatchesFunc {
 				return nil, fmt.Errorf("failed to load toml patch: %w", err)
 			}
 			trees = append(trees, tree)
+		}
+
+		return trees, nil
+	}
+}
+
+func FileGlobPatches(patchFileGlobs ...string) PatchesFunc {
+	return func() ([]*toml.Tree, error) {
+		var trees []*toml.Tree
+		for _, patchGlob := range patchFileGlobs {
+			files, err := filepath.Glob(patchGlob)
+			if err != nil {
+				return nil, fmt.Errorf("failed to list files via glob %q: %w", patchGlob, err)
+			}
+			patchTrees, err := FilePatches(files...)()
+			if err != nil {
+				return nil, err
+			}
+			trees = append(trees, patchTrees...)
 		}
 
 		return trees, nil
