@@ -6,7 +6,6 @@ package root
 import (
 	"fmt"
 	"os"
-	"path/filepath"
 
 	"github.com/otiai10/copy"
 	"github.com/spf13/cobra"
@@ -17,7 +16,6 @@ import (
 )
 
 type opts struct {
-	inputFile      string
 	patchFileGlobs []string
 	inPlace        bool
 	backupSuffix   string
@@ -40,7 +38,9 @@ func (o *opts) AddFlags(cmd *cobra.Command) {
 }
 
 func (o *opts) execute(cmd *cobra.Command, args []string) error {
-	patched, err := patch.TOMLFile(o.inputFile, patch.FileGlobPatches(o.patchFileGlobs...))
+	inputFile := args[0]
+
+	patched, err := patch.TOMLFile(inputFile, patch.FileGlobPatches(o.patchFileGlobs...))
 	if err != nil {
 		return err
 	}
@@ -49,25 +49,8 @@ func (o *opts) execute(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	f, err := os.CreateTemp(
-		filepath.Dir(o.inputFile),
-		fmt.Sprintf(".%s.tmp", filepath.Base(o.inputFile)),
-	)
-	if err != nil {
-		return fmt.Errorf("failed to create temp file: %w", err)
-	}
-	defer os.Remove(f.Name())
-	defer f.Close()
-
-	if _, err := f.WriteString(patched); err != nil {
-		return fmt.Errorf("failed to write patched TOML to temporary file: %w", err)
-	}
-	if err := f.Close(); err != nil {
-		return fmt.Errorf("failed to close temporary file: %w", err)
-	}
-
 	if o.backupSuffix != "" {
-		if err := copy.Copy(o.inputFile, fmt.Sprintf("%s%s", o.inputFile, o.backupSuffix),
+		if err := copy.Copy(inputFile, fmt.Sprintf("%s%s", inputFile, o.backupSuffix),
 			copy.Options{
 				Sync:          true,
 				PreserveTimes: true,
@@ -77,8 +60,12 @@ func (o *opts) execute(cmd *cobra.Command, args []string) error {
 		}
 	}
 
-	if err := os.Rename(f.Name(), o.inputFile); err != nil {
-		return fmt.Errorf("failed to overwrite file with patched file")
+	if err := os.WriteFile(
+		inputFile,
+		[]byte(patched),
+		0o600,
+	); err != nil {
+		return fmt.Errorf("failed to overwrite file with patched config: %w", err)
 	}
 	return nil
 }

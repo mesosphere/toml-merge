@@ -77,9 +77,8 @@ E2E_FLAKE_ATTEMPTS ?= 1
 
 .PHONY: e2e-test
 e2e-test: ## Runs e2e tests
-e2e-test: install-tool.golang install-tool.ginkgo
+e2e-test: install-tool.golang install-tool.ginkgo build-snapshot
 	$(info $(M) running e2e tests$(if $(E2E_LABEL), labelled "$(E2E_LABEL)")$(if $(E2E_FOCUS), matching "$(E2E_FOCUS)"))
-	GOOS=linux $(MAKE) build-snapshot
 	ginkgo run \
 		--r \
 		--race \
