@@ -35,11 +35,11 @@ jobs:
         uses: asdf-vm/actions/install@v1
 
       - name: Build
-        run: make release
+        run: make release-snapshot
         env:
           GORELEASER_FLAGS: --skip-publish --skip-validate --skip-docker
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run binary
         run: |
-          ./dist/toml-merge_darwin_amd64_v1/toml-merge
+          ./dist/toml-merge_darwin_amd64_v1/toml-merge version
