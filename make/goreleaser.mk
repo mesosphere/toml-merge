@@ -36,4 +36,5 @@ release-snapshot: dockerauth install-tool.goreleaser ; $(info $(M) building snap
 		--snapshot \
 		--skip-publish \
 		--rm-dist \
-		--parallelism=$(GORELEASER_PARALLELISM)
+		--parallelism=$(GORELEASER_PARALLELISM) \
+		$(GORELEASER_FLAGS)
