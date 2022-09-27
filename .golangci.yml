@@ -60,7 +60,7 @@ linters-settings:
       - Standard
       - Default
       - Prefix(github.com/mesosphere)
-      - Prefix(github.com/jimmidyson/toml-merge)
+      - Prefix(github.com/mesosphere/toml-merge)
   gocritic:
     enabled-tags:
       - diagnostic

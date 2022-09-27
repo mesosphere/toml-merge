@@ -10,9 +10,9 @@ import (
 	"github.com/otiai10/copy"
 	"github.com/spf13/cobra"
 
-	"github.com/jimmidyson/toml-merge/pkg/patch"
-
 	"github.com/mesosphere/dkp-cli-runtime/core/output"
+
+	"github.com/mesosphere/toml-merge/pkg/patch"
 )
 
 type opts struct {

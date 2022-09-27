@@ -7,7 +7,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/jimmidyson/toml-merge/cmd/toml-merge/root"
+	"github.com/mesosphere/toml-merge/cmd/toml-merge/root"
 )
 
 func main() {

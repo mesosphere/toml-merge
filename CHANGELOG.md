@@ -4,4 +4,4 @@
 
 
 
-**Full Changelog**: https://github.com/jimmidyson/toml-merge/commits/v0.1.0
+**Full Changelog**: https://github.com/mesosphere/toml-merge/commits/v0.1.0
