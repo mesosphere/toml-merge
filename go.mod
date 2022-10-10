@@ -10,7 +10,7 @@ require (
 	github.com/evanphx/json-patch/v5 v5.6.0
 	github.com/mesosphere/dkp-cli-runtime/core v0.7.0
 	github.com/onsi/ginkgo/v2 v2.2.0
-	github.com/onsi/gomega v1.20.2
+	github.com/onsi/gomega v1.21.1
 	github.com/otiai10/copy v1.7.0
 	github.com/pelletier/go-toml v1.9.5
 	github.com/spf13/cobra v1.5.0
