@@ -13,7 +13,7 @@ export PATH := $(GOBIN):$(PATH)
 ifneq ($(wildcard $(GO_TOOLS_FILE)),)
 define install_go_tool
 	mkdir -p $(GOBIN)
-	CGO_ENABLED=0 go install -tags containers_image_openpgp -v $$(grep $1 $(GO_TOOLS_FILE))
+	CGO_ENABLED=0 go install -tags containers_image_openpgp -v $$(grep -Eo '^.+$1[^ \t]*' $(GO_TOOLS_FILE))
 endef
 
 .PHONY:
