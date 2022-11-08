@@ -18,8 +18,8 @@ github.com/inconshreveable/mousetrap v1.0.1/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLf
 github.com/jessevdk/go-flags v1.4.0/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
 github.com/mattn/go-isatty v0.0.16 h1:bq3VjFmv/sOjHtdEhmkEV4x1AJtvUvOJ2PFAZ5+peKQ=
 github.com/mattn/go-isatty v0.0.16/go.mod h1:kYGgaQfpe5nmfYZH+SKPsOc2e4SrIfOl2e/yFXSvRLM=
-github.com/mesosphere/dkp-cli-runtime/core v0.7.0 h1:v1tumIUEuxMgTECms96jj5YKQU0Ekw/0HOgm3/nuuC0=
-github.com/mesosphere/dkp-cli-runtime/core v0.7.0/go.mod h1:mlSRuXJaHeOFfSKhC3ZxOm+gfQuP9jT5WuFe3e0EGYs=
+github.com/mesosphere/dkp-cli-runtime/core v0.7.1 h1:t4MUV6X3VMaQcx4H9//UtGBU7cA0r3l9FEq4aqdczrY=
+github.com/mesosphere/dkp-cli-runtime/core v0.7.1/go.mod h1:mlSRuXJaHeOFfSKhC3ZxOm+gfQuP9jT5WuFe3e0EGYs=
 github.com/onsi/ginkgo/v2 v2.4.0 h1:+Ig9nvqgS5OBSACXNk15PLdp0U9XPYROt9CFzVdFGIs=
 github.com/onsi/ginkgo/v2 v2.4.0/go.mod h1:iHkDK1fKGcBoEHT5W7YBq4RFWaQulw+caOMkAt4OrFo=
 github.com/onsi/gomega v1.22.1 h1:pY8O4lBfsHKZHM/6nrxkhVPUznOlIu3quZcKP/M20KI=
