@@ -30,8 +30,8 @@ github.com/mesosphere/dkp-cli-runtime/core v0.7.1 h1:t4MUV6X3VMaQcx4H9//UtGBU7cA
 github.com/mesosphere/dkp-cli-runtime/core v0.7.1/go.mod h1:mlSRuXJaHeOFfSKhC3ZxOm+gfQuP9jT5WuFe3e0EGYs=
 github.com/onsi/ginkgo/v2 v2.8.3 h1:RpbK1G8nWPNaCVFBWsOGnEQQGgASi6b8fxcWBvDYjxQ=
 github.com/onsi/ginkgo/v2 v2.8.3/go.mod h1:6OaUA8BCi0aZfmzYT/q9AacwTzDpNbxILUT+TlBq6MY=
-github.com/onsi/gomega v1.27.0 h1:QLidEla4bXUuZVFa4KX6JHCsuGgbi85LC/pCHrt/O08=
-github.com/onsi/gomega v1.27.0/go.mod h1:i189pavgK95OSIipFBa74gC2V4qrQuvjuyGEr3GmbXA=
+github.com/onsi/gomega v1.27.1 h1:rfztXRbg6nv/5f+Raen9RcGoSecHIFgBBLQK3Wdj754=
+github.com/onsi/gomega v1.27.1/go.mod h1:aHX5xOykVYzWOV4WqQy0sy8BQptgukenXpCXfadcIAw=
 github.com/otiai10/copy v1.7.0 h1:hVoPiN+t+7d2nzzwMiDHPSOogsWAStewq3TwU05+clE=
 github.com/otiai10/copy v1.7.0/go.mod h1:rmRl6QPdJj6EiUqXQ/4Nn2lLXoNQjFCQbbNrxgc/t3U=
 github.com/otiai10/curr v0.0.0-20150429015615-9b4961190c95/go.mod h1:9qAhocn7zKJG+0mI8eUu6xqkFDYS2kb2saOteoSB3cE=
