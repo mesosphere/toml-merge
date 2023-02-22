@@ -1,5 +1,5 @@
-golangci-lint 1.50.1
-goreleaser 1.12.3
-golang 1.19.2
-pre-commit 2.20.0
-ginkgo 2.4.0
+ginkgo 2.8.3
+golangci-lint 1.51.2
+goreleaser 1.15.2
+golang 1.20.1
+pre-commit 3.0.4
