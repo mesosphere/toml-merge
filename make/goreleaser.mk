@@ -14,7 +14,7 @@ build-snapshot: dockerauth install-tool.goreleaser ; $(info $(M) building snapsh
 	goreleaser --debug=$(GORELEASER_DEBUG) \
 		build \
 		--snapshot \
-		--rm-dist \
+		--clean \
 		--parallelism=$(GORELEASER_PARALLELISM) \
 		--single-target \
 		--skip-post-hooks
@@ -24,7 +24,7 @@ release: ## Builds a release with goreleaser
 release: dockerauth install-tool.goreleaser ; $(info $(M) building release $*)
 	goreleaser --debug=$(GORELEASER_DEBUG) \
 		release \
-		--rm-dist \
+		--clean \
 		--parallelism=$(GORELEASER_PARALLELISM) \
 		$(GORELEASER_FLAGS)
 
@@ -35,6 +35,6 @@ release-snapshot: dockerauth install-tool.goreleaser ; $(info $(M) building snap
 		release \
 		--snapshot \
 		--skip-publish \
-		--rm-dist \
+		--clean \
 		--parallelism=$(GORELEASER_PARALLELISM) \
 		$(GORELEASER_FLAGS)

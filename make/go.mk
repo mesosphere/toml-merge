@@ -3,7 +3,7 @@
 
 # The GOPRIVATE environment variable controls which modules the go command considers
 # to be private (not available publicly) and should therefore not use the proxy or checksum database
-export GOPRIVATE ?= github.com/mesosphere
+export GOPRIVATE ?=
 
 ALL_GO_SUBMODULES := $(shell PATH='$(PATH)'; find -mindepth 2 -maxdepth 2 -name go.mod -printf '%P\n' | sort)
 GO_SUBMODULES_NO_TOOLS := $(filter-out $(addsuffix /go.mod,tools),$(ALL_GO_SUBMODULES))
@@ -69,7 +69,7 @@ endif
 
 .PHONY: bench.%
 bench.%: ## Runs go benchmarks for a specific module
-bench.%:; $(info $(M) running benchmarks$(if $(GOTEST_RUN), matching "$(GOTEST_RUN)") for $* module)
+bench.%: ; $(info $(M) running benchmarks$(if $(GOTEST_RUN), matching "$(GOTEST_RUN)") for $* module)
 	$(if $(filter-out root,$*),cd $* && )go test $(if $(GOTEST_RUN),-run "$(GOTEST_RUN)") -race -cover -v ./...
 
 E2E_PARALLEL_NODES ?= $(shell nproc --ignore=1)
@@ -82,7 +82,7 @@ e2e-test: install-tool.golang install-tool.ginkgo build-snapshot
 	ginkgo run \
 		--r \
 		--race \
-		--progress \
+		--show-node-events \
 		--trace \
 		--randomize-all \
 		--randomize-suites \
@@ -156,9 +156,9 @@ go-clean.%: install-tool.golang; $(info $(M) running go clean for $* module)
 .PHONY: go-generate
 go-generate: ## Runs go generate
 go-generate: install-tool.golang ; $(info $(M) running go generate)
-	go generate ./...
+	go generate -x ./...
 
 .PHONY: go-mod-upgrade
 go-mod-upgrade: ## Interactive check for direct module dependency upgrades
-go-mod-upgrade: install-tool.golang ; $(info $(M) checking for direct module dependency upgrades)
+go-mod-upgrade: install-tool.go.go-mod-upgrade; $(info $(M) checking for direct module dependency upgrades)
 	go-mod-upgrade
