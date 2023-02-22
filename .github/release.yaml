@@ -17,6 +17,9 @@ changelog:
     - title: Fixes 🔧
       labels:
         - fix
+    - title: "Updated dependencies :dependabot:"
+      labels:
+        - dependencies
     - title: Other Changes
       labels:
         - "*"
