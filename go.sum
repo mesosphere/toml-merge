@@ -30,8 +30,8 @@ github.com/jwalton/go-supportscolor v1.1.0 h1:HsXFJdMPjRUAx8cIW6g30hVSFYaxh9yRQw
 github.com/jwalton/go-supportscolor v1.1.0/go.mod h1:hFVUAZV2cWg+WFFC4v8pT2X/S2qUUBYMioBD9AINXGs=
 github.com/mattn/go-isatty v0.0.17 h1:BTarxUcIeDqL27Mc+vyvdWYSL28zpIhv3RoTdsLMPng=
 github.com/mattn/go-isatty v0.0.17/go.mod h1:kYGgaQfpe5nmfYZH+SKPsOc2e4SrIfOl2e/yFXSvRLM=
-github.com/mesosphere/dkp-cli-runtime/core v0.7.2 h1:dWzl9mdIS14DV7GQbTgVy8EyjFTr5re4V4UUzdqNqzA=
-github.com/mesosphere/dkp-cli-runtime/core v0.7.2/go.mod h1:hIC+ZZFofDtkRs1v+TnnGxAhFT5IIXuqVvXMe00zOvw=
+github.com/mesosphere/dkp-cli-runtime/core v0.7.3 h1:oHRPvWdZgNOJxXCPFPRIqKWppB2cXx+HZeV8RVtwAsg=
+github.com/mesosphere/dkp-cli-runtime/core v0.7.3/go.mod h1:hIC+ZZFofDtkRs1v+TnnGxAhFT5IIXuqVvXMe00zOvw=
 github.com/onsi/ginkgo/v2 v2.11.0 h1:WgqUCUt/lT6yXoQ8Wef0fsNn5cAuMK7+KT9UFRz2tcU=
 github.com/onsi/ginkgo/v2 v2.11.0/go.mod h1:ZhrRA5XmEE3x3rhlzamx/JJvujdZoJ2uvgI7kR0iZvM=
 github.com/onsi/gomega v1.27.9 h1:qIyVWbOsvQEye2QCqLsNSeH/5L1RS9vS382erEWfT3o=
