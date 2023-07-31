@@ -8,7 +8,7 @@ go 1.19
 require (
 	github.com/BurntSushi/toml v1.3.2
 	github.com/evanphx/json-patch/v5 v5.6.0
-	github.com/mesosphere/dkp-cli-runtime/core v0.7.2
+	github.com/mesosphere/dkp-cli-runtime/core v0.7.3
 	github.com/onsi/ginkgo/v2 v2.11.0
 	github.com/onsi/gomega v1.27.9
 	github.com/otiai10/copy v1.12.0
