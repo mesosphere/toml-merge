@@ -9,8 +9,8 @@ require (
 	github.com/BurntSushi/toml v1.3.2
 	github.com/evanphx/json-patch/v5 v5.8.0
 	github.com/mesosphere/dkp-cli-runtime/core v0.7.3
-	github.com/onsi/ginkgo/v2 v2.14.0
-	github.com/onsi/gomega v1.30.0
+	github.com/onsi/ginkgo/v2 v2.15.0
+	github.com/onsi/gomega v1.31.1
 	github.com/otiai10/copy v1.14.0
 	github.com/pelletier/go-toml v1.9.5
 	github.com/spf13/cobra v1.8.0
