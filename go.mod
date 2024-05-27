@@ -6,7 +6,7 @@ module github.com/mesosphere/toml-merge
 go 1.19
 
 require (
-	github.com/BurntSushi/toml v1.3.2
+	github.com/BurntSushi/toml v1.4.0
 	github.com/evanphx/json-patch/v5 v5.9.0
 	github.com/mesosphere/dkp-cli-runtime/core v0.7.3
 	github.com/onsi/ginkgo/v2 v2.15.0
